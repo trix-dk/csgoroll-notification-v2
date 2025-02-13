@@ -19,9 +19,9 @@ const BUFF_API_URL = "https://prices.csgotrader.app/latest/buff163.json";
 let buffPrices = {};
 
 // Ensure rates.json exists, otherwise download it
-if (!fs.existsSync('./rates.json')) {
+if (!fs.existsSync('./rates.json') || fs.readFileSync('./rates.json', 'utf8').trim() === '') {
   console.log('Downloading rates.json...');
-exec('curl -o rates.json https://raw.githubusercontent.com/trix-dk/csgoroll-notification-v2/main/rates.json', (error) => {
+  exec('curl -L -o rates.json https://raw.githubusercontent.com/trix-dk/csgoroll-notification-v2/main/rates.json', (error, stdout, stderr) => {
     if (error) {
       console.error('Failed to download rates.json:', error.message);
       process.exit(1);
@@ -30,7 +30,7 @@ exec('curl -o rates.json https://raw.githubusercontent.com/trix-dk/csgoroll-noti
     loadRates(); // Load rates after downloading
   });
 } else {
-  loadRates(); // Load rates if the file already exists
+  loadRates(); // Load rates if the file exists and is non-empty
 }
 
 // Load rates from local JSON file
