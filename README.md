@@ -104,4 +104,3 @@ The bot will:
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/trix-dk/csgoroll-notification-v2/issues) if you want to contribute.
 Special thanks to https://github.com/0xM14N for the rates.json <3
-```
