@@ -21,7 +21,7 @@ let buffPrices = {};
 // Ensure rates.json exists, otherwise download it
 if (!fs.existsSync('./rates.json')) {
   console.log('Downloading rates.json...');
-  exec('curl -o rates.json https://raw.githubusercontent.com/trix-dk/csgoroll-notification-v2/blob/main/rates.json', (error) => {
+exec('curl -o rates.json https://raw.githubusercontent.com/trix-dk/csgoroll-notification-v2/main/rates.json', (error) => {
     if (error) {
       console.error('Failed to download rates.json:', error.message);
       process.exit(1);
