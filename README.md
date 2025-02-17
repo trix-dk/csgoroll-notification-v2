@@ -100,6 +100,8 @@ The bot will:
 5. **Auto-Reconnect:**  
    In case of disconnections or errors, the bot queues and processes reconnection attempts automatically.
 
+If you still need help contact me via discord: trix__dk (two underscores).
+
 ## Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/trix-dk/csgoroll-notification-v2/issues) if you want to contribute.
